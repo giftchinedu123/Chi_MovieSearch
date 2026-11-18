@@ -1,7 +1,7 @@
 const TMDB_BASE_URL = 'https://api.themoviedb.org/3';
 
 export function getTmdbApiKey() {
-  const raw = import.meta.env.VITE_TMDB_API_KEY;
+  const raw = import.meta.env.TMDB_API_KEY;
   return typeof raw === 'string' ? raw.trim() : '';
 }
 
@@ -43,7 +43,7 @@ export async function fetchFromTmdbUrl(url, signal) {
         message = errorData.status_message;
       }
     } catch {
-      // Ignore JSON parse failures on non-JSON error responses
+    
     }
     const error = new Error(message);
     error.status = response.status;
