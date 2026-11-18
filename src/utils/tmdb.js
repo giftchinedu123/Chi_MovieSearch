@@ -28,7 +28,7 @@ export function buildTmdbUrl(endpoint, params = {}) {
 
 export async function fetchFromTmdbUrl(url, signal) {
   if (!hasTmdbApiKey()) {
-    const error = new Error('TMDB API key is missing. Add VITE_TMDB_API_KEY to your .env file.');
+    const error = new Error('TMDB API key is missing. Add TMDB_API_KEY to your .env file.');
     error.status = 401;
     throw error;
   }
