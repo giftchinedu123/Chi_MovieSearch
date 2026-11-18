@@ -1,7 +1,7 @@
 const TMDB_BASE_URL = 'https://api.themoviedb.org/3';
 
 export function getTmdbApiKey() {
-  const raw = import.meta.env.TMDB_API_KEY;
+  const raw = import.meta.env.VITE_TMDB_API_KEY;
   return typeof raw === 'string' ? raw.trim() : '';
 }
 
@@ -28,7 +28,7 @@ export function buildTmdbUrl(endpoint, params = {}) {
 
 export async function fetchFromTmdbUrl(url, signal) {
   if (!hasTmdbApiKey()) {
-    const error = new Error('TMDB API key is missing. Add TMDB_API_KEY to your .env file.');
+    const error = new Error('TMDB API key is missing. Add VITE_TMDB_API_KEY to your .env file.');
     error.status = 401;
     throw error;
   }
