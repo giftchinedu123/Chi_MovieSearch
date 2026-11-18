@@ -1,0 +1,6 @@
+{
+  "name": "Movie Search App",
+  "description": "Responsive movie discovery and search application powered by the TMDB API with trending films, details, trailers, and local saved watchlist.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
