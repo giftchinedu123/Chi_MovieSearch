@@ -1,5 +1,4 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { ApiKeyMissing } from './components/ApiKeyMissing';
 import { SavedMoviesProvider } from './context/SavedMoviesContext';
 import { AppLayout } from './layouts/AppLayout';
 import { Home } from './pages/Home';
@@ -10,9 +9,6 @@ import { Search } from './pages/Search';
 import { hasTmdbApiKey } from './utils/tmdb';
 
 export default function App() {
-  if (!hasTmdbApiKey()) {
-    return <ApiKeyMissing />;
-  }
 
   return (
     <SavedMoviesProvider>
